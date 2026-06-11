@@ -167,7 +167,7 @@ export default function Navbar() {
               letterSpacing: "-0.02em",
             }}
           >
-            Jeeban & <span style={{ color: "#1a56db" }}>CO.</span>
+            Debendra & <span style={{ color: "#1a56db" }}>CO.</span>
           </span>
         </Link>
 

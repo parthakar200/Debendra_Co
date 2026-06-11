@@ -69,7 +69,7 @@ export default function Footer() {
                 <img src={newAdvLogo} alt="Advocate Logo"  />
               </div>
               <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: 'white' }}>
-                Jeeban & <span style={{ color: '#60a5fa' }}>CO.</span>
+                Debendra & <span style={{ color: '#60a5fa' }}>CO.</span>
               </span>
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: '#64748b', marginBottom: 24 }}>
