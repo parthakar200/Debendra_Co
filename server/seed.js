@@ -6,7 +6,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/jeebanco';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/debendraco';
 
 // Inline models to avoid import issues
 const userSchema = new mongoose.Schema({
@@ -299,12 +299,12 @@ console.log('✅ Seeded 4 team members');
     const hashedPassword = await bcrypt.hash('Admin@123', 12);
     await User.create({
       name: 'Admin User',
-      email: 'admin@jeebanco.com',
+      email: 'admin@debendraco.com',
       password: hashedPassword,
       role: 'admin',
       isVerified: true,
     });
-    console.log('✅ Admin user created: admin@jeebanco.com / Admin@123');
+    console.log('✅ Admin user created: admin@debendraco.com / Admin@123');
 
     console.log('\n🎉 Database seeded successfully!');
     process.exit(0);

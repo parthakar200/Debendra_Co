@@ -1,7 +1,7 @@
 {
-  "name": "jeebanco",
+  "name": "debendraco",
   "version": "1.0.0",
-  "description": "JeebanCo Corporate Services Clone - MERN Stack",
+  "description": "Debendraco Corporate Services Clone - MERN Stack",
   "scripts": {
     "start": "node server/index.js",
     "dev": "concurrently \"nodemon server/index.js\" \"cd client && npm start\"",
