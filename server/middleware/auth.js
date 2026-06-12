@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'jeebanco_jwt_secret_2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'debendraco_jwt_secret_2026';
 
 exports.protect = async (req, res, next) => {
   try {
