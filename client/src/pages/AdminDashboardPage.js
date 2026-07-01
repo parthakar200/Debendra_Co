@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -220,6 +221,17 @@ function ServicesTab() {
     window.dispatchEvent(new Event('admin_service_update'));
   };
 
+  // Persist a single field (features/process/faqs) to the database so ALL visitors see it
+  const persistServiceField = async (svc, field, value) => {
+    try {
+      await API.patch(`/services/slug/${svc.slug}`, { [field]: value });
+      return true;
+    } catch (err) {
+      toast.error(err?.response?.data?.message || 'Failed to save to server');
+      return false;
+    }
+  };
+
   const startEditContent = (s, tab) => {
     const id = s._id || s.id;
     const co = contentOverrides[id] || {};
@@ -235,21 +247,31 @@ function ServicesTab() {
       ]).map(f => ({ ...f }));
     }
     setContentDraft(draft);
-    setEditingContent({ serviceId: id, tab, serviceName: s.name });
+    setEditingContent({ serviceId: id, tab, serviceName: s.name, slug: s.slug });
     setTimeout(() => editSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   };
 
-  const saveContentDraft = () => {
-    const { serviceId, tab } = editingContent;
+  const saveContentDraft = async () => {
+    const { serviceId, tab, slug } = editingContent;
     const co = contentOverrides[serviceId] || {};
-    let updated;
+    let updated, fieldName, fieldValue;
     if (tab === 'overview') {
-      updated = { ...co, features: contentDraft.filter(f => f.trim()) };
+      fieldValue = contentDraft.filter(f => f.trim());
+      fieldName = 'features';
+      updated = { ...co, features: fieldValue };
     } else if (tab === 'process') {
-      updated = { ...co, process: contentDraft.filter(p => p.title?.trim()) };
+      fieldValue = contentDraft.filter(p => p.title?.trim());
+      fieldName = 'process';
+      updated = { ...co, process: fieldValue };
     } else {
-      updated = { ...co, faqs: contentDraft.filter(f => f.question?.trim()) };
+      fieldValue = contentDraft.filter(f => f.question?.trim());
+      fieldName = 'faqs';
+      updated = { ...co, faqs: fieldValue };
     }
+
+    const ok = await persistServiceField({ slug }, fieldName, fieldValue);
+    if (!ok) return; // don't close the editor or claim success if the save failed
+
     saveContentOverrides({ ...contentOverrides, [serviceId]: updated });
     setEditingContent(null);
     setContentDraft(null);
@@ -277,9 +299,13 @@ function ServicesTab() {
     setTimeout(() => editSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   };
 
-  const saveDocDraft = (s) => {
+  const saveDocDraft = async (s) => {
     const id = s._id || s.id;
     const cleaned = docDraft.map(d => d.trim()).filter(Boolean);
+
+    const ok = await persistServiceField(s, 'documents', cleaned);
+    if (!ok) return;
+
     saveDocOverrides({ ...docOverrides, [id]: cleaned });
     setEditingDocs(null);
     toast.success('Documents updated!');

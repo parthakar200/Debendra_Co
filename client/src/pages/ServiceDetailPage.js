@@ -1,29 +1,39 @@
-import React, { useState } from 'react';
+
+
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-//import { useAuth } from '../context/AuthContext';
 import { useServices } from '../context/ServicesContext';
+import { API } from '../context/AuthContext';
 import { BUSINESS_PHONE } from '../utils/constants';
 import { SERVICES_DATA } from '../utils/servicesData';
 import { Helmet } from 'react-helmet-async';
 
-const DOC_STORAGE_KEY      = 'admin_service_documents';
-const CONTENT_STORAGE_KEY  = 'admin_service_content';
-
-function loadDocOverrides() {
-  try { return JSON.parse(localStorage.getItem(DOC_STORAGE_KEY)) || {}; } catch { return {}; }
-}
-
 export default function ServiceDetailPage() {
   const { slug } = useParams();
-  //const { user } = useAuth();
   const navigate = useNavigate();
   const { services } = useServices();
   const [tab, setTab] = useState('overview');
   const [openFaq, setOpenFaq] = useState(null);
+  const [fullService, setFullService] = useState(null);
+  const [loadingFull, setLoadingFull] = useState(true);
 
-  // Find from context (applies price/hide overrides) — fall back to static for custom
-  const service = services.find(s => s.slug === slug)
+  // Find from context first (gives us price/hide state quickly) — fall back to static for custom
+  const listService = services.find(s => s.slug === slug)
     || SERVICES_DATA.find(s => s.slug === slug);
+
+  // The list endpoint strips out `process` and `faqs` for performance, so fetch
+  // the full single-service record (which includes them) directly from the DB.
+  useEffect(() => {
+    let cancelled = false;
+    setLoadingFull(true);
+    API.get(`/services/${slug}`)
+      .then(res => { if (!cancelled) setFullService(res.data.service); })
+      .catch(() => { if (!cancelled) setFullService(null); })
+      .finally(() => { if (!cancelled) setLoadingFull(false); });
+    return () => { cancelled = true; };
+  }, [slug]);
+
+  const service = fullService || listService;
 
   if (service && service.isActive === false) {
     navigate('/services');
@@ -31,6 +41,9 @@ export default function ServiceDetailPage() {
   }
 
   if (!service) {
+    if (loadingFull) {
+      return <div style={{ paddingTop: 'var(--nav-height)', textAlign: 'center', padding: '120px 24px', color: '#94a3b8' }}>Loading…</div>;
+    }
     return (
       <div style={{ paddingTop: 'var(--nav-height)', textAlign: 'center', padding: '120px 24px' }}>
         <div style={{ fontSize: 64, marginBottom: 16 }}>😔</div>
@@ -40,18 +53,12 @@ export default function ServiceDetailPage() {
     );
   }
 
-  // Load per-service document overrides from localStorage (set by admin)
-  const docOverrides = loadDocOverrides();
-  const documents = docOverrides[service.id] ?? service.documents ?? [];
+  // Read directly from the database record — no localStorage overrides
+  const documents = service.documents ?? [];
+  const features  = service.features  ?? [];
+  const processes = service.process   ?? [];
+  const faqs      = service.faqs      ?? [];
 
-  // Admin-editable content overrides (features, process, faqs)
-  const contentOverrides = (() => {
-    try { return JSON.parse(localStorage.getItem(CONTENT_STORAGE_KEY)) || {}; } catch { return {}; }
-  })();
-  const co = contentOverrides[service.id] || {};
-  const features  = co.features  ?? service.features  ?? [];
-  const processes = co.process   ?? service.process   ?? [];
-  const faqs      = co.faqs     ?? service.faqs       ?? [];
 
   const gstAmount   = service.price.base * 0.18;
   const totalPrice  = service.price.base + gstAmount + (service.price.governmentFee || 0);
@@ -164,7 +171,7 @@ export default function ServiceDetailPage() {
                     <div key={i} style={{ display: 'flex', gap: 20, marginBottom: i < (processes.length - 1) ? 24 : 0 }}>
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#1a56db', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 16, fontFamily: 'var(--font-heading)', flexShrink: 0 }}>{step.step}</div>
-                        {i < service.process.length - 1 && <div style={{ width: 2, flex: 1, background: '#e2e8f0', margin: '8px 0' }} />}
+                        {i < processes.length - 1 && <div style={{ width: 2, flex: 1, background: '#e2e8f0', margin: '8px 0' }} />}
                       </div>
                       <div style={{ paddingTop: 8, paddingBottom: 24 }}>
                         <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>{step.title}</h4>
