@@ -160,14 +160,15 @@ export default function Navbar() {
           </div>
           <span
             style={{
-              fontSize: 18,
+              fontSize: 28,
               fontWeight: 800,
-              fontFamily: "var(--font-heading)",
+              // fontFamily: "var(--font-heading)",
+              fontFamily : "serif",
               color: "#0f172a",
               letterSpacing: "-0.02em",
             }}
           >
-            Debendra & <span style={{ color: "#1a56db" }}>CO.</span>
+            DEBENDRA & <span style={{ color: "#1a56db" }}>CO.</span>
           </span>
         </Link>
 
