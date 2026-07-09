@@ -71,6 +71,7 @@ export default function Footer() {
                           alignItems: "center",
                           justifyContent: "center",
                           color: "white",
+                          background: "white",
                           fontSize: 18,
                           fontWeight: 800,
                           fontFamily: "var(--font-heading)",
