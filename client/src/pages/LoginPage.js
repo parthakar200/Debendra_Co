@@ -97,7 +97,7 @@ export default function LoginPage() {
             <div style={{ width: 60, height: 40, borderRadius: 10, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
               <img src={newAdvLogo} alt="Advocate Logo"  />
             </div>
-            <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Debendra & <span style={{ color: '#1a56db' }}>CO.</span></span>
+            <span style={{ fontSize: 25, fontWeight: 800, fontFamily: 'serif', color: '#0f172a' }}>DEBENDRA & <span style={{ color: '#1a56db' }}>CO.</span></span>
           </Link>
 
           <h1 style={{ fontSize: 28, fontFamily: 'var(--font-heading)', fontWeight: 800, marginBottom: 6 }}>Welcome back</h1>

@@ -126,7 +126,7 @@ export default function RegisterPage() {
             <div style={{ width: 60, height: 36, borderRadius: 10, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img src={newAdvLogo} alt="Advocate Logo" style={{ height: 32, objectFit: 'contain' }} />
             </div>
-            <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Debendra & <span style={{ color: '#1a56db' }}>CO.</span></span>
+            <span style={{ fontSize: 25, fontWeight: 800, fontFamily: 'serif', color: '#0f172a' }}>DEBENDRA & <span style={{ color: '#1a56db' }}>CO.</span></span>
           </Link>
 
           <h1 style={{ fontSize: 28, fontFamily: 'var(--font-heading)', fontWeight: 800, marginBottom: 6 }}>Get a free consultation</h1>
