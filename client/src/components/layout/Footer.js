@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import newAdvLogo from '../../assets/images/newAdvLogo.png';
+import CALOGO from "../../assets/images/CALOGO.png";
 
 const FOOTER_LINKS = {
   'Company': [
@@ -61,6 +62,30 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+            <div
+                        style={{
+                          width: 60,
+                          height: 36,
+                          borderRadius: 10,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "white",
+                          fontSize: 18,
+                          fontWeight: 800,
+                          fontFamily: "var(--font-heading)",
+                          border: "2px solid black",
+                          paddingBottom: "8px",
+                        }}
+                      >
+                        <img src={CALOGO} alt="CA Logo" 
+                          style={{
+                            height: "50px",
+                            width: "50px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
               <div style={{
                 width: 40, height: 36, borderRadius: 10, background: 'white',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white',
@@ -68,8 +93,8 @@ export default function Footer() {
               }}>
                 <img src={newAdvLogo} alt="Advocate Logo"  />
               </div>
-              <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: 'white' }}>
-                Debendra & <span style={{ color: '#60a5fa' }}>CO.</span>
+              <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'serif', color: 'white' }}>
+                DEBENDRA & <span style={{ color: '#60a5fa' }}>CO.</span>
               </span>
             </Link>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: '#64748b', marginBottom: 24 }}>
