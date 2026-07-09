@@ -240,7 +240,7 @@ export default function AboutPage() {
       {/* For Search Engine Optimization */}
       <Helmet>
         <title>
-          Jeeban & Co. - Company Registration, GST, ITR, Trademark India
+          Debendra & Co. - Company Registration, GST, ITR, Trademark India
         </title>
         <meta
           name="description"
@@ -300,7 +300,7 @@ export default function AboutPage() {
               lineHeight: 1.7,
             }}
           >
-            Since 2016, Jeeban & CO has been on a mission to make business
+            Since 2016, Debendra & CO has been on a mission to make business
             registration and compliance effortless for every Indian
             entrepreneur.
           </p>
@@ -397,7 +397,7 @@ export default function AboutPage() {
                   marginBottom: 20,
                 }}
               >
-                Jeeban & CO was founded in 2016 by a group of Chartered
+                Debendra & CO was founded in 2016 by a group of Chartered
                 Accountants and Company Secretaries who saw a critical gap:
                 small businesses were struggling to navigate India's complex
                 regulatory landscape without expensive professional help.

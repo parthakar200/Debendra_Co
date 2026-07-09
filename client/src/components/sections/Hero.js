@@ -73,7 +73,7 @@ export default function Hero() {
           </h1>
 
           <p style={{ fontSize: 18, color: '#475569', lineHeight: 1.7, marginBottom: 40, maxWidth: 580, margin: '0 auto 40px' }}>
-            Join millions who trust Jeeban & CO. to simplify MCA, GST, and Income Tax compliance with AI automation, expert support, and paperless workflows.
+            Join millions who trust Debendra & CO. to simplify MCA, GST, and Income Tax compliance with AI automation, expert support, and paperless workflows.
           </p>
 
           {/* CTAs */}

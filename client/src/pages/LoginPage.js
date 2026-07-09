@@ -45,7 +45,7 @@ export default function LoginPage() {
     <div style={{ minHeight: '100vh', display: 'flex', background: '#f8fafc', paddingTop: 'var(--nav-height)' }}>
       {/* For Search Engine Optimization */}
             <Helmet>
-              <title>Jeeban & Co. - Company Registration, GST, ITR, Trademark India</title>
+              <title>Debendra & Co. - Company Registration, GST, ITR, Trademark India</title>
               <meta name="description" content="India's trusted platform for company registration, GST filing, trademark, and income tax services. Based in Soro, Baleshwar, Bhubaneswar, Odisha." />
               <meta name="keywords" content="company registration Bhubaneswar, GST registration Odisha, ITR filing Baleshwar, Project Funding, trademark India" />
             </Helmet>
@@ -62,7 +62,7 @@ export default function LoginPage() {
             Simplify your compliance journey
           </h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,.75)', lineHeight: 1.7, marginBottom: 40 }}>
-            Join 5K+ businesses who trust Jeeban & CO. for GST, MCA, Trademark, and Income Tax compliance.
+            Join 5K+ businesses who trust Debendra & CO. for GST, MCA, Trademark, and Income Tax compliance.
           </p>
           {[
             'Company registration in 15 days',
@@ -83,7 +83,7 @@ export default function LoginPage() {
               {[1,2,3,4,5].map(s => <span key={s} style={{ color: '#fbbf24', fontSize: 16 }}>★</span>)}
             </div>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,.85)', lineHeight: 1.6, fontStyle: 'italic' }}>
-              "Jeeban & CO. made our company registration super smooth. Got our incorporation certificate in just 15 days!"
+              "Debendra & CO. made our company registration super smooth. Got our incorporation certificate in just 15 days!"
             </p>
             <div style={{ marginTop: 12, fontSize: 13, color: 'rgba(255,255,255,.6)' }}>— Priya Sharma, Founder TechVenture Pvt Ltd</div>
           </div>
@@ -97,11 +97,11 @@ export default function LoginPage() {
             <div style={{ width: 60, height: 40, borderRadius: 10, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
               <img src={newAdvLogo} alt="Advocate Logo"  />
             </div>
-            <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Jeeban & <span style={{ color: '#1a56db' }}>CO.</span></span>
+            <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Debendra & <span style={{ color: '#1a56db' }}>CO.</span></span>
           </Link>
 
           <h1 style={{ fontSize: 28, fontFamily: 'var(--font-heading)', fontWeight: 800, marginBottom: 6 }}>Welcome back</h1>
-          <p style={{ fontSize: 15, color: '#64748b', marginBottom: 32 }}>Sign in to your Jeeban & CO. account</p>
+          <p style={{ fontSize: 15, color: '#64748b', marginBottom: 32 }}>Sign in to your Debendra & CO. account</p>
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div className="form-group">

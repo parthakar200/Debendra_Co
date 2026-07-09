@@ -828,7 +828,7 @@ function TeamTab() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div>
               <label style={labelStyle}>Full Name *</label>
-              <input style={inputStyle} placeholder="e.g. Jeeban Patra" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+              <input style={inputStyle} placeholder="e.g. Sandeep Patra" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
             </div>
             <div>
               <label style={labelStyle}>Role / Designation *</label>
@@ -1002,7 +1002,7 @@ function MessagesTab() {
     <div style={{ display: 'grid', gridTemplateColumns: selected ? '1fr 380px' : '1fr', gap: 20 }}>
       {/* For Search Engine Optimization */}
             <Helmet>
-              <title>Jeeban & Co. - Company Registration, GST, ITR, Trademark India</title>
+              <title>Debendra & Co. - Company Registration, GST, ITR, Trademark India</title>
               <meta name="description" content="India's trusted platform for company registration, GST filing, trademark, and income tax services. Based in Soro, Baleshwar, Bhubaneswar, Odisha." />
               <meta name="keywords" content="company registration Bhubaneswar, GST registration Odisha, ITR filing Baleshwar, Project Funding, trademark India" />
             </Helmet>
@@ -1129,7 +1129,7 @@ export default function AdminDashboardPage() {
     <div style={{ paddingTop: 'var(--nav-height)', minHeight: '100vh', background: '#f8fafc' }}>
       {/* For Search Engine Optimization */}
             <Helmet>
-              <title>Jeeban & Co. - Company Registration, GST, ITR, Trademark India</title>
+              <title>Debendra & Co. - Company Registration, GST, ITR, Trademark India</title>
               <meta name="description" content="India's trusted platform for company registration, GST filing, trademark, and income tax services. Based in Soro, Baleshwar, Bhubaneswar, Odisha." />
               <meta name="keywords" content="company registration Bhubaneswar, GST registration Odisha, ITR filing Baleshwar, Project Funding, trademark India" />
             </Helmet>

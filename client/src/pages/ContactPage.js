@@ -34,7 +34,7 @@ export default function ContactPage() {
     <div style={{ paddingTop: 'var(--nav-height)', minHeight: '100vh' }}>
       {/* For Search Engine Optimization */}
             <Helmet>
-              <title>Jeeban & Co. - Company Registration, GST, ITR, Trademark India</title>
+              <title>Debendra & Co. - Company Registration, GST, ITR, Trademark India</title>
               <meta name="description" content="India's trusted platform for company registration, GST filing, trademark, and income tax services. Based in Soro, Baleshwar, Bhubaneswar, Odisha." />
               <meta name="keywords" content="company registration Bhubaneswar, GST registration Odisha, ITR filing Baleshwar, Project Funding, trademark India" />
             </Helmet>
@@ -53,8 +53,8 @@ export default function ContactPage() {
         <div className="container">
           <div style={{ display: 'flex', gap: 40, justifyContent: 'center', flexWrap: 'wrap' }}>
             {[
-              { icon: '📞', label: 'Call Us', value: '+91 9692195476', sub: 'Mon–Sat 9AM–10PM' },
-              { icon: '📧', label: 'Email Us', value: 'advjeeban@gmail.com', sub: 'Response in 24 hrs' },
+              { icon: '📞', label: 'Call Us', value: '+91 8018429212', sub: 'Mon–Sat 9AM–10PM' },
+              { icon: '📧', label: 'Email Us', value: 'debendrabarik783@gmail.com', sub: 'Response in 24 hrs' },
               { icon: '💬', label: 'Live Chat', value: 'Chat with Expert', sub: 'Not Available now' },
             ].map(c => (
               <div key={c.label} style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'white' }}>

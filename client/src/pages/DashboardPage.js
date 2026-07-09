@@ -82,7 +82,7 @@ export default function DashboardPage() {
     <div style={{ paddingTop: 'var(--nav-height)', minHeight: '100vh', background: '#f8fafc' }}>
       {/* For Search Engine Optimization */}
             <Helmet>
-              <title>Jeeban & Co. - Company Registration, GST, ITR, Trademark India</title>
+              <title>Debendra & Co. - Company Registration, GST, ITR, Trademark India</title>
               <meta name="description" content="India's trusted platform for company registration, GST filing, trademark, and income tax services. Based in Soro, Baleshwar, Bhubaneswar, Odisha." />
               <meta name="keywords" content="company registration Bhubaneswar, GST registration Odisha, ITR filing Baleshwar, Project Funding, trademark India" />
             </Helmet>

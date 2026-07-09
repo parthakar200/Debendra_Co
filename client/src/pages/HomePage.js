@@ -91,9 +91,9 @@ function FAQ({ question, answer }) {
 
 const FAQS = [
   {
-    question: "How can Jeeban & CO help my business with GST registration?",
+    question: "How can Debendra & CO help my business with GST registration?",
     answer:
-      "Jeeban & CO provides comprehensive GST registration services, ensuring your business complies with GST laws. From registration to timely return filing and tax planning, our experts handle everything so you can focus on growing your business.",
+      "Debendra & CO provides comprehensive GST registration services, ensuring your business complies with GST laws. From registration to timely return filing and tax planning, our experts handle everything so you can focus on growing your business.",
   },
   {
     question: "How long does company registration take?",
@@ -106,7 +106,7 @@ const FAQS = [
       "You need applicant's PAN card, business registration proof, logo file (if word + logo mark), and a Power of Attorney. Our team guides you through the entire process.",
   },
   {
-    question: "Can I file GST returns myself using Jeeban & CO?",
+    question: "Can I file GST returns myself using Debendra & CO?",
     answer:
       "Yes! Our LEDGERS platform allows you to file GST returns yourself with AI-powered assistance. Alternatively, our experts can file on your behalf for a nominal fee.",
   },
@@ -291,7 +291,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Jeeban & CO */}
+      {/* Why Debendra & CO */}
       <section className="section" style={{ background: "white" }}>
         <div className="container">
           <div

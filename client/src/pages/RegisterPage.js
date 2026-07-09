@@ -49,7 +49,7 @@ export default function RegisterPage() {
       <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8fafc', paddingTop: 'var(--nav-height)' }}>
         {/* For Search Engine Optimization */}
               <Helmet>
-                <title>Jeeban & Co. - Company Registration, GST, ITR, Trademark India</title>
+                <title>Debendra & Co. - Company Registration, GST, ITR, Trademark India</title>
                 <meta name="description" content="India's trusted platform for company registration, GST filing, trademark, and income tax services. Based in Soro, Baleshwar, Bhubaneswar, Odisha." />
                 <meta name="keywords" content="company registration Bhubaneswar, GST registration Odisha, ITR filing Baleshwar, Project Funding, trademark India" />
               </Helmet>
@@ -126,7 +126,7 @@ export default function RegisterPage() {
             <div style={{ width: 60, height: 36, borderRadius: 10, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img src={newAdvLogo} alt="Advocate Logo" style={{ height: 32, objectFit: 'contain' }} />
             </div>
-            <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Jeeban & <span style={{ color: '#1a56db' }}>CO.</span></span>
+            <span style={{ fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Debendra & <span style={{ color: '#1a56db' }}>CO.</span></span>
           </Link>
 
           <h1 style={{ fontSize: 28, fontFamily: 'var(--font-heading)', fontWeight: 800, marginBottom: 6 }}>Get a free consultation</h1>
