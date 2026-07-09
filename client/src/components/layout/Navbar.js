@@ -5,6 +5,7 @@ import { useServices } from "../../context/ServicesContext";
 // import { CATEGORIES } from '../../utils/servicesData';
 
 import newAdvLogo from "../../assets/images/newAdvLogo.png";
+import CALOGO from "../../assets/images/CALOGO.png";
 
 export default function Navbar() {
   const { services } = useServices();
@@ -142,6 +143,22 @@ export default function Navbar() {
             flexShrink: 0,
           }}
         >
+          <div
+            style={{
+              width: 60,
+              height: 36,
+              borderRadius: 10,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              fontSize: 18,
+              fontWeight: 800,
+              fontFamily: "var(--font-heading)",
+            }}
+          >
+            <img src={CALOGO} alt="CA Logo" />
+          </div>
           <div
             style={{
               width: 60,
