@@ -155,9 +155,17 @@ export default function Navbar() {
               fontSize: 18,
               fontWeight: 800,
               fontFamily: "var(--font-heading)",
+              border: "2px solid black",
+              paddingBottom: "8px",
             }}
           >
-            <img src={CALOGO} alt="CA Logo" />
+            <img src={CALOGO} alt="CA Logo" 
+              style={{
+                height: "50px",
+                width: "50px",
+                objectFit: "cover",
+              }}
+            />
           </div>
           <div
             style={{
